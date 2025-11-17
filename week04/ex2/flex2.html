@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Equal Weight Preserving Margins</title>
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+      }
+      .main-container {
+        display: flex;
+        height: 100%;
+        background: #25384B; 
+        padding: 0 3em; 
+        box-sizing: border-box; 
+      }
+      .left-section {
+        background: #A3CFCC;
+        flex-grow: 1;  
+        justify-content: center;
+        align-items: center;
+      }
+      .right-gap-wrapper {
+        display: flex;
+        flex-grow: 1; 
+        flex-shrink: 0;
+      }
+
+      .right-section {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1; 
+        background: #F7CFB6;
+        margin-left: 1em; 
+        padding: 1em; 
+        box-sizing: border-box; 
+      }
+      .item {
+        background: #86C2DE;
+        flex-shrink: 0; 
+      }
+      .right-section > .item:first-child {
+        flex-grow: 1;
+        height: 100px;
+      }
+      .right-section > .item:nth-child(2) {
+        flex-grow: 1; 
+        margin-top: 1em; 
+        margin-bottom: 1em; 
+        height: 100px;
+      }
+      .right-section > .item:last-child {
+        flex-grow: 1; 
+        height: 100px;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div class="main-container">
+      <section class="left-section"></section>
+      
+      <div class="right-gap-wrapper">
+        <section class="right-section">
+          <div class="item"></div>
+          <div class="item"></div>
+          <div class="item"></div>
+        </section>
+        
+        <div></div> 
+      </div>
+    </div>
+  </body>
+</html>

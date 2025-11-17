@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Exercise 1 - Updated Layout</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <style>
+     
+
+      body {
+        background: pink;              
+        display: flex;
+        justify-content: center;      
+        align-items: stretch;
+        font-family: Arial, sans-serif;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        margin-left: 10em;            
+        margin-right: 10em;           
+        gap: 1em;                     
+        background: #666666;          
+        min-height: 100vh; 
+        width: 60%;  
+        height: 60%;          
+      }
+      header, footer {
+        height: 100px;               
+        align-items: center;
+        padding-left: 1rem;          
+        color: #111;
+        background: #666666;          
+      }
+      .sep {
+        height: 1em;                  
+        background: #aaff33;         
+        flex: 0 0 auto;              
+      }
+      main {
+        flex: 1 1 auto;              
+        background: #666666;          
+        color: #111;
+      }
+      .sep-inner {
+        width: 50%;
+        height: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>Header</header>
+
+      <!-- top green separator -->
+      <div class="sep" ></div>
+
+      <main>Main</main>
+
+      <!-- bottom green separator -->
+      <div class="sep" ></div>
+
+      <footer>Footer</footer>
+    </div>
+  </body>
+</html>

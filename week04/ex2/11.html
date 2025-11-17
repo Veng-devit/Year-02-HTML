@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Final Equal Height and Width Layout</title>
+    <style>
+      /* Reset and ensure full viewport height */
+      html, body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+      }
+      
+      /* The main container sets the dark blue background and the outer 3em margins */
+      .main-container {
+        display: flex;
+        height: 100%;
+        background: #25384B; 
+        padding: 0 3em; 
+        box-sizing: border-box; 
+      }
+
+      /* Wrapper for the fluid sections and the fixed gaps */
+      .content-wrapper {
+        display: flex;
+        flex-grow: 1; /* Takes up all space between the 3em outer margins */
+      }
+
+      .left-section {
+        /* Left Section: Equal width */
+        background: #A3CFCC;
+        flex-grow: 1; 
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      /* Placeholder for the double arrow */
+      .left-section::before {
+        content: '↔';
+        font-size: 80px;
+        color: white;
+      }
+      
+      /* Fixed 1em Gap */
+      .gap-1em {
+        width: 1em;
+        flex-shrink: 0;
+        background: #25384B; /* Dark Blue Gap Color */
+      }
+
+      .right-section {
+        /* Right Section: Equal width */
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1; 
+        flex-shrink: 0;
+        
+        background: #F7CFB6;
+        
+        /* 1em orange padding around the light blue items */
+        padding: 1em; 
+        box-sizing: border-box; 
+      }
+
+      /* --- Item Stacking in Right Part (All Items Equal Height) --- */
+      
+      .item {
+        background: #86C2DE;
+        flex-shrink: 0; 
+        
+        /* KEY CHANGE: Set all items to grow equally */
+        flex-grow: 1; 
+      }
+      
+      /* KEY CHANGE: Apply 1em margin between all items */
+      .right-section > .item:not(:last-child) {
+        margin-bottom: 1em; 
+      }
+      
+      /* Ensure NO fixed height is set, allowing all three items to share space equally */
+      
+    </style>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="content-wrapper">
+        <section class="left-section"></section>
+        
+        <div class="gap-1em"></div> 
+        
+        <section class="right-section">
+          <div class="item"></div>
+          <div class="item"></div>
+          <div class="item"></div>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>

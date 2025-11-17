@@ -1,0 +1,39 @@
+
+body {
+    background-color: #555555; 
+    padding: 30px 100px; 
+    font-family: sans-serif;
+    margin: 0;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+.container{
+    width: 700px;
+}
+.box1, .box2, .box3 {
+    background-color: white; 
+    padding: 20px;
+    border-radius: 10px;  
+}
+.btn {
+    border: none;
+    color: white; 
+    padding: 10px 15px; 
+    border-radius: 5px; 
+    font-weight: bold; 
+    margin-top: 20px; 
+    font-family: inherit;
+}
+.btn{
+    border-radius: 20px;
+}
+.box1 .btn {
+    background-color: #008080; 
+}
+.box2 .btn {
+    background-color: #ff8c00; 
+    color:black;
+}
+.box3 .btn {
+    background-color: #800080; 
+}
