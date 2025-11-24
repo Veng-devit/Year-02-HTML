@@ -1,0 +1,233 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+    background-color: #f5f7fa;
+    color: #333;
+}
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+.left-sidbar {
+    background-color: #04498e;
+    color: white;
+    width: 250px;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+}
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    padding: 0 20px 20px;
+    border-bottom: 1px solid #34495e;
+    margin-bottom: 20px;
+}
+nav {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+nav div {
+    padding: 12px 20px;       
+    align-items: center;
+}
+nav div:hover {
+    background-color: #34495e;
+}
+.btn {
+    background-color: #011827;
+    color: white;
+    border: none;
+    margin: 20px auto 0;
+    padding: 15px; 
+    width: 80%;
+    border-radius: 15px;
+}
+.rigth-sidbar {
+    flex-grow: 1;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+h1 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+.main-section {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+.header-main-section {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+.top-main-section, .bottom-main-section {
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}       
+.data {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.data div {
+    text-align: center;
+}
+.data h3 {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+.data p {
+    font-size: 0.8rem;
+    color: #7f8c8d;
+    margin: 0;
+}
+
+.data > h3:last-child {
+    background-color: #3498db;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 1rem;
+}
+.message-side {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+.search {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.search h4 {
+    color: #2c3e50;
+}
+.message-list {
+    list-style: none;
+}
+.message-item {
+    display: flex;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+    align-items: flex-start;
+}
+.message-item:last-child {
+    border-bottom: none;
+}
+.message-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+.message-content {
+    flex-grow: 1;
+}
+.message-head {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #2c3e50;
+}
+.message-text {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+}
+@media (max-width: 1023px) and (min-width: 610px) {
+    .left-sidbar {
+        width: 70px;
+    }
+    .logo {
+        font-size: 18px;
+        padding: 0 10px 20px;
+        text-align: center;
+    }
+    nav div {
+        justify-content: center;
+        padding: 12px 10px;
+    }
+    nav div span {
+        display: none;
+    }
+    .rigth-sidbar {
+        flex-direction: column;
+    }
+}
+/* Phone (<= 609px) */
+@media (max-width: 609px) {
+    .container {
+        flex-direction: column;
+    }
+    .left-sidbar {
+        width: 100%;
+        flex-direction: row;
+        padding: 10px 0;
+        align-items: center;
+    }
+    .logo {
+        padding: 0 15px;
+        margin-bottom: 0;
+        border-bottom: none;
+        border-right: 1px solid #34495e;
+        margin-right: 15px;
+    }
+    nav {
+        flex-direction: row;
+        flex-grow: 1;
+    }
+    nav div {
+        padding: 8px 15px;
+        white-space: nowrap;
+    }
+    .btn {
+        margin: 0 15px 0 0;
+    }
+    .rigth-sidbar {
+        padding: 20px;
+    }
+    .main-section, .message-side {
+        width: 100%;
+    }
+    .data {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .data div {
+        flex: 1 0 30%;
+    }
+    .data > h3:last-child {
+        flex: 1 0 100%;
+        margin-top: 10px;
+        text-align: center;
+    }
+}
+/* Laptop (>= 1024px) */
+@media (min-width: 1024px) {
+    .rigth-sidbar {
+        flex-direction: row;
+    }
+    .main-section {
+        flex: 2;
+    }
+    .message-side {
+        flex: 1;
+        margin-left: 20px;
+    }
+}
+
+        

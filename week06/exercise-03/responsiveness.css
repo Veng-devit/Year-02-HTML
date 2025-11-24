@@ -1,0 +1,45 @@
+.container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 15px; 
+    max-width: 80%;
+    margin: 30px auto;
+    padding: 15px;
+    border: 3px solid gainsboro;
+}
+.card{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr;
+    border: 1px solid #ccc;
+    background-color: white;
+    padding: 15px;
+    border-radius: 5px;
+}
+.img {
+    background-color: rgb(199, 198, 198);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #555;
+    margin-bottom: 10px;
+    height: 150px; 
+}
+h3 {
+    margin: 0 0 5px 0;  
+}
+p {
+    margin-bottom: 10px; 
+    color: #666;
+}
+@media (min-width: 601px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (min-width: 1024px) {
+    .container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

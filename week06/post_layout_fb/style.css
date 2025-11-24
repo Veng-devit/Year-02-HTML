@@ -1,0 +1,101 @@
+body{
+    height: 100%;
+    background-color: rgb(2, 2, 120);
+    font-family: sans-serif;
+   
+}
+.container{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 10px 10px;
+    padding: 15px 15px;
+  
+    background-color: white;
+}
+.header{
+    
+    display: flex;
+    gap: 10px;   
+}
+.profile{
+    background-color: white;
+    padding: 4px;
+    margin: 2px;
+}
+.info{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+}
+.avatar{
+    height: 32px;
+    width: 32px;
+    background-color: red;
+    border-radius: 99%;
+}
+.caption{
+    margin-top: 5px;
+}
+.content{
+    background-color: brown;
+    flex-grow: 1;
+    background-color: rgb(6, 6, 175);
+}
+.footer {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 10px;
+}
+.action-btns{
+    display: flex;
+    gap: 4px;
+    justify-content: space-evenly;
+}
+.action-btn{
+    display: flex;
+    gap: 4px;
+    align-items: center;
+
+}
+.reaction-counts{
+    padding: 10px;
+    display: flex;
+    gap: 5px;
+    border-top: 1px solid gainsboro ;
+}
+.comment{
+    display: flex;
+    gap: 5px;
+}
+.left-side-comment{
+    height: 32px;
+    width: 32px;
+    border-radius: 100%;
+    background-color:rgb(196, 189, 189);
+    
+}
+.right-side-comment{
+    display: flex;
+    flex-grow: 1;
+    height: 32px;
+    border-radius: 20px;
+    border: 1px solid grey;
+    justify-content: space-between;  
+}
+.right-inner{
+    display: flex;
+    gap: 10px;
+    align-items: center; 
+    margin-right: 10px;
+}
+.left-inner {
+    display: flex;
+    align-items: center;   
+    color: grey;
+    margin-left: 10px;
+}
+
+
+
