@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Layout</title>
+    <style>
+        .container{
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+            gap: 20px;
+            padding: 10px;
+            border: 1px solid gainsboro;
+        }
+        .header, .footer{
+            background-color: black;
+            font-size: 1.2rem;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        .content{
+            font-size: 1.2rem;
+            padding: 10px;
+            text-align: center;
+        }
+        .main{
+            background-color: gainsboro;
+        }
+        .sidebar{
+            background-color: gray;
+        }
+        @media (min-width: 600px) {
+            .container{
+                grid-template-columns: 1fr 1fr;  
+                grid-template-areas: "header header" "main sidebar""footer footer";
+            }
+            .header{ grid-area: header; }
+            .main{ grid-area: main; }
+            .sidebar{ grid-area: sidebar; }
+            .footer{ grid-area: footer; }
+        }
+        @media (min-width: 900px) {
+            .container{
+                grid-template-columns: 3fr 1fr; 
+                padding: 20px;
+            }
+            .header, .footer{
+                font-size: 1.5rem;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">Responesive Header</div>
+        <div class="content main">Main content</div>
+        <div class="content sidebar">Sidebar</div>
+        <div class="footer">Footer</div>
+    </div>
+</body>
+</html>

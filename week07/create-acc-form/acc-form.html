@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: whitesmoke;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+        h1 {
+            background-color: rgb(216, 216, 216);
+            color: #333;
+            padding: 30px;
+            text-align: center;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+        form {
+            width: 700px;
+            max-width: 90%;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            box-sizing: border-box;
+        }
+        .name, .password, .choose-btn, .income, .profile {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .first-name, .last-name, .input-pass, .confirm-pass,
+        .gender, .hobby, .sourceIncome, .rang, .picture, .age {
+            flex: 1;
+        }
+        .email, .bio {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+            font-size: 0.9em;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="number"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-bottom: 10px; 
+        }
+        input[type="radio"], input[type="checkbox"] {
+            width: auto;
+            margin-right: 5px;
+        }
+        .gender label, .hobby label {
+            display: inline;
+            font-weight: normal;
+        }    
+        .income-output {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-left: 10px;
+            font-size: 0.8em;
+        }
+        .submit-btn {
+            text-align: right;
+            padding-top: 10px;
+        }
+        .submit-btn button {
+            background-color: #00bfa5;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1em;  
+        }
+        .submit-btn button:hover {
+            background-color: #00897b;
+        }
+    </style>
+</head>
+<body>
+    
+    <form action="/api/register-new-user" method="POST">
+        <h1>Create Account</h1>
+        <div class="name">
+            <div class="first-name">
+                <label for="fname">First Name*</label><br>
+                <input type="text" name="userFname" id="fname" placeholder="enter your first name" required><br>
+            </div>
+            <div class="last-name">
+                <label for="lname">Last Name*</label><br>
+                <input type="text" name="userlname" id="lname" placeholder="enter your last name" required>
+            </div> 
+        </div>
+        <br>
+        <div class="email">
+            <label for="userEmail">Email*</label><br>
+            <input type="email" name="userEmail" id="userEmail" placeholder="enter your email" required>
+        </div>
+        <div class="password">
+            <div class="input-pass">
+                <label for="UserPassword">Password*</label>
+                <input type="password" name="UserPassword" id="UserPassword" placeholder="enter your password" required>
+            </div>
+            <div class="confirm-pass">
+                <label for="confirm-password">Confirm Password*</label>
+                <input type="password" name="confirm-password" id="confirm-password" placeholder="enter yosur password again" required>
+            </div>
+        </div>
+        <div class="choose-btn">
+            <div class="gender">
+                <label>Gender:</label><br>
+                <input type="radio" id="genderMale" name="userGender" value="male">
+                <label for="genderMale">Male</label>
+                <input type="radio" id="genderFemale" name="userGender" value="female">
+                <label for="genderFemale">Female</label><br>
+            </div>
+            <div class="hobby">
+                <label>Hobbies</label><br>
+                <input type="checkbox" id="hobbyMusic" name="hobbies" value="music">
+                <label for="hobbyMusic" class="inline-label">Music</label>
+                <input type="checkbox" id="hobbySports" name="hobbies" value="sports">
+                <label for="hobbySports" class="inline-label">Sports</label>
+                <input type="checkbox" id="hobbyTravel" name="hobbies" value="travel">
+                <label for="hobbyTravel" class="inline-label">Travel</label>
+                <input type="checkbox" id="hobbyMovies" name="hobbies" value="movies">
+                <label for="hobbyMovies" class="inline-label">Movies</label>
+            </div>
+        </div>
+        <div class="income">
+            <div class="sourceIncome">
+                <label for="incomeSource">Source of Income</label>
+                <select id="incomeSource" name="incomeSource">
+                    <option value="employed">Employed</option>
+                    <option value="self-employed">Self-Employed</option>
+                    <option value="student">Student</option>
+                </select>
+            </div>
+            <div class="rang">
+                <label for="incomeRange">Income <span id="incomeValue" class="income-output">20K</span></label><br>
+                <input type="range" id="incomeRange" name="incomeRange" min="0" max="100" value="20" step="10" oninput="document.getElementById('incomeValue').innerText = this.value + 'K'">
+            </div>
+        </div>
+        <div class="profile">
+            <div class="picture">
+                <label for="profilePicture">Upload Profile Picture</label>
+                <input type="file" id="profilePicture" name="profilePicture">
+            </div>
+            <div class="age">
+                <label for="age">Age</label>
+                <input type="number" id="age" name="age" value="18" min="18" max="150">
+            </div>
+        </div>
+        <div class="bio">
+            <label for="bio">Bio</label>
+            <textarea id="bio" name="bio" rows="4"></textarea>
+        </div>
+        <div class="submit-btn">
+            <button type="submit" >Create</button>
+        </div>
+    </form>
+</body>
+</html>

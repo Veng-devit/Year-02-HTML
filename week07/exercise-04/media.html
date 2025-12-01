@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Query Example</title>
+    <style>
+        .box {
+            padding: 20px;
+            color: white;
+            font-size: 30px;
+            text-align: center;
+            margin: 20px;
+        }
+
+        .big {
+            background-color: green;
+        }
+
+        .small {
+            background-color: red;
+        }
+        .small {
+            display: none;
+        }
+        @media only screen and (max-width: 500px) {
+            .big {
+                display: none;
+            }
+            .small {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box big">I'm BIG 😎</div>
+    <div class="box small">I'm SMALL 😱</div>
+</body>
+</html>

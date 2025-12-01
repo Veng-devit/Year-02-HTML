@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Bar Responsive</title>
+    <style>
+        .nav-container{
+            display: flex;
+            flex-direction: row;
+            background-color: royalblue;
+            color: white;
+            padding: 20px;
+            justify-content: space-between;
+        }
+        .logo{
+            padding: 10px;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        .right-nav{
+            display: flex;
+            flex-direction: row;
+            gap:20px;
+            padding: 10px;
+            font-size: 1em;
+        }
+        .menu-icon{
+            display: none;
+        }
+        @media(max-width:768px){
+            .right-nav{
+                display: none;
+            }
+            .menu-icon{
+                display: block;
+                padding: 10px;
+                font-weight: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-container">
+        <div class="logo">Logo</div>
+        <div class="right-nav">
+            <div class="nav-item">Home</div>
+            <div class="nav-item">About</div>
+            <div class="nav-item">Service</div>
+            <div class="nav-item">Contact</div>
+        </div>
+        <div class="menu-icon">☰</div>
+    </div>
+</body>
+</html>

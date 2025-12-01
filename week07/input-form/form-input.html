@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        form > div {
+            margin-bottom: 15px;
+        }
+        label {
+            display: inline-block;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Simple User Registration</h1>
+
+    <form action="/submit-form" method="POST">
+
+        <label for="userName">Name:</label><br>
+        <input type="text" id="userName" name="userName" placeholder="Enter your full name" required><br>
+        <br>
+        <label for="userEmail">Email:</label><br>
+        <input type="email" id="userEmail" name="userEmail" placeholder="e.g., user@example.com" required><br>
+        <br>
+        <label for="userPassword">Password:</label><br>
+        <input type="password" id="userPassword" name="userPassword" placeholder="Must be 8+ characters"><br>
+        <br>
+        <label for="userAge">Age:</label><br>
+        <input type="number" id="userAge" name="userAge" placeholder="Your age"><br>
+        <br>
+        <label for="birthDate">Birthdate:</label><br>
+        <input type="date" id="birthDate" name="birthDate"><br>
+        <br>
+        <label>Gender:</label><br>
+        <input type="radio" id="genderMale" name="userGender" value="male">
+        <label for="genderMale">Male</label>
+        <input type="radio" id="genderFemale" name="userGender" value="female">
+        <label for="genderFemale">Female</label><br>
+        <br>
+        <input type="checkbox" id="newsletter" name="newsletter" value="yes">
+        <label for="newsletter">Subscribe to newsletter</label><br>
+        <br>
+        <label for="userCountry">Country:</label><br>
+        <select id="userCountry" name="userCountry">
+            <option value="" disabled selected>Select your country</option>
+            <option value="USA">United States</option>
+            <option value="CAN">Canada</option>
+            <option value="UK">United Kingdom</option>
+            <option value="OTHER">Other</option>
+        </select><br>
+        <br>     
+        <button type="submit">Register Now</button>
+
+    </form>
+
+</body>
+</html>
