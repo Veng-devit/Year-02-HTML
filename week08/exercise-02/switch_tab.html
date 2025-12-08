@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        .active-tab {
+            background-color: white;
+            border-bottom: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="h-[100vh] w-300 flex flex-col justify-center mx-auto bg-gray-100">
+        <div class="flex flex-col gap-5 justify-center mx-auto">
+            <h1 class="text-center text-3xl font-bold">About</h1>
+            <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean, egestas.</p>
+            <img src="nature.jpg" class="h-100 w-200 flex justify-center mx-auto " alt="">
+        </div>
+        <nav class="flex justify-evenly border-b border-gray-200 bg-gray-300 w-200 mx-auto ">
+            <button id="tab-history" data-tab="history" class="tab-button tab-active px-6 py-3 text-gray-500 hover:text-blue-500">
+                History
+            </button>
+            <button id="tab-vision" data-tab="vision" class="tab-button px-6 py-3 text-gray-500 hover:text-blue-500">
+                Vision
+            </button>
+            <button id="tab-goals" data-tab="goals" class="tab-button px-6 py-3 text-gray-500 hover:text-blue-500">
+                Goals
+            </button>
+        </nav>
+        <div class="pt-5 pl-3 w-200 flex justify-center mx-auto bg-white">
+            <div id="content-history" class="tab-content">
+                <p class="text-gray-700">
+                    <strong>History</strong><br>
+                    Icing sweet roll pudding jelly-o marzipan cookie waffle. I love bear claw <br>
+                    macaroon ice cream pop-up RODO cookie. Chocolate gummies chocolate bicycle
+                    rights. Unimoni kebabs cake java shorts waffle sesame. Waageband bilde 
+                    try-hard, waaka habe sauna main bush. Small batch turmeric mustache tich 
+                    wayfarers 8-bit shaman charmruse tacos, viral direct trade hoodie api chambray, 
+                    craft beer pork belly flannel tacos single origin coffee art party fingerstache pop-up.
+                </p>
+                <ul class="list-disc list-inside text-sm text-gray-600 mt-4">
+                    <li>List item</li>
+                    <li>List item</li>
+                </ul>
+            </div>
+            <div id="content-vision" class="tab-content hidden">
+                <p class="text-gray-700">
+                     <strong>Vision</strong><br>
+                    Meh tum PBR&B keytar copper mug anim, helv of Helvetica. Synth crucifix affog deep v 
+                    hella biodiesel. Church-key idelice polaroid put a bird on it kitschdre polaroid kale ename pin, 
+                    sartoosd meggings. Franken la croix cray, irony yr aesthetics, four loko con hellaweza art alert, 
+                    moscic pork samsal lic. Cornhole lo-fi sartoosd street art, yr activated charcoal mixtape pok pok. 
+                    Hammock small batch hammock master cleanse pop-up truffaut, bicycle rights skateboard affogato ready-made 
+                    sustainable deep v hella meggs schlitz narwhal.
+                </p>
+                <ul class="list-disc list-inside text-sm text-gray-600 mt-4">
+                    <li>List item</li>
+                    <li>List item</li>
+                    <li>List item</li>
+                </ul>
+            </div>
+            <div id="content-goals" class="tab-content hidden">
+                <p class="text-gray-700">
+                    <strong>Goals</strong><br>
+                    Pork belly vice plaid, literally kale chips taxidermy sriracha meggings. Pop-up flexitarian freegan, 
+                    coloring book schlitz narwhal. Woke chambray yuccie, marfa four dollar toast put a bird on it etsy migas. 
+                    Food truck street art everyday carry, gochujang deep v. Hot chicken irony microdosing. I love listicle 
+                    chicharrones, poke wayfarers yr. Tbh small batch deep v freegan.
+                </p>
+                <ul class="list-disc list-inside text-sm text-gray-600 mt-4">
+                    <li>List item</li>
+                    <li>List item</li>
+                </ul>
+            </div>
+        </div>
+    </div> 
+    <script>
+        const tabs = document.querySelectorAll(".tab-button");  
+        const contents = document.querySelectorAll(".tab-content"); 
+        tabs.forEach(tab => {
+            tab.addEventListener("click", () => {
+                tabs.forEach(t => t.classList.remove("active-tab"));
+                contents.forEach(c => c.classList.add("hidden"));
+                tab.classList.add("active-tab");
+                document.getElementById("content-" + tab.dataset.tab).classList.remove("hidden");
+            });
+        });
+    </script>
+</body>
+</html>

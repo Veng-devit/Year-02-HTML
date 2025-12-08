@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-blue-50">
+    <div class="p-4 flex justify-end">
+        <button onclick="openBar()" class="text-3xl">☰</button>
+    </div>
+    <div id="sidebar" class="fixed top-0 left-0 h-full w-64 bg-white shadow-lg transform -translate-x-full transition-all duration-300">
+        <button onclick="closeBar()" class="absolute top-4 right-4 text-2xl text-red-600">&times;</button>
+        <h2 class="text-xl font-bold p-6">SIDE-BAR</h2>
+        <nav class="flex flex-col gap-4 px-6 text-lg">
+            <a href="#" class="hover:text-blue-500">Home</a>
+            <a href="#" class="hover:text-blue-500">About</a>
+            <a href="#" class="hover:text-blue-500">Projects</a>
+            <a href="#" class="hover:text-blue-500">Contact</a>
+        </nav>
+        <div class="absolute bottom-6 left-6 flex gap-3 text-xl">🌐 📘 🐦 💼</div>
+    </div>
+    <script>
+        function openBar() {
+            document.getElementById("sidebar").classList.remove("-translate-x-full");
+        }
+        function closeBar() {
+            document.getElementById("sidebar").classList.add("-translate-x-full");
+        }
+    </script>
+</body>
+</html>
